@@ -1,27 +1,37 @@
 'use strict';
 const title = '==============================\n現在持っているタスクの一覧\n==============================';
-let task_list = {
-  tasks:['机を片付ける', '牛乳を買う','散歩する'],
-  genrus:['掃除', '買い物','運動'],
-} 
-let taskPush = function(job)  {
-  return task_list.tasks.push(job);
+// let task = {
+//   content: '',
+//   genre: ''
+// };
+let taskLists = [
+  {
+    content: '机を片付ける',
+    genru: '掃除'
+  },
+  {
+    content: '牛乳を買う',
+    genru: '掃除'
+  },
+  {
+    content: '散歩する',
+    genru: '運動'
+  },
+];
+let taskPush = function(job, type)  {
+  return taskLists.push( {content:job, genru:type} );
 }
-let genruPush = function(item) {
-  return task_list.genrus.push(item);
-}
-for(let i = 0; i < task_list.tasks.length; i++) {
-  console.log(i, task_list.tasks[i], task_list.genrus[i]);
-}
-
+taskLists.forEach( function(taskList) {
+  console.log('[内容]' + taskList.content + '[ジャンル]' + taskList.genru);
+});
 let job = prompt('タスクを入力して下さい。');
-while(job) {
-  taskPush(job);
-  job = prompt('ジャンルを入力して下さい。');
-  genruPush(job);
+let type = prompt('ジャンルを入力して下さい。');
+while(job, type) {
+  taskPush(job, type);
   alert('新しいタスクを入力しました。');
-  for(let i = 0; i < task_list.tasks.length; i++) {
-    console.log(i, task_list.tasks[i], task_list.genrus[i]);
-  }
+  taskLists.forEach( function(taskList) {
+    console.log('[内容]' + taskList.content + '[ジャンル]' + taskList.genru);
+  });
   job = prompt('タスクを入力して下さい');
+  type = prompt('ジャンルを入力しました。');
 } 
