@@ -1,6 +1,6 @@
 'use strict';
 const title = '==============================\n現在持っているタスクの一覧\n==============================';
-let tasks = [
+const tasks = [
   {
     content: '机を片付ける',
     genre: '掃除'
@@ -14,7 +14,7 @@ let tasks = [
     genre: '運動'
   },
 ];
-let pushTask = (job, type) => tasks.push({ content: job, genre: type });
+const pushTask = (job, type) => tasks.push({ content: job, genre: type });
 tasks.forEach(function (task) {
   console.log('[内容]' + task.content + '[ジャンル]' + task.genre);
 });
