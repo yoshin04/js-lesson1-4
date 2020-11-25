@@ -15,15 +15,15 @@ const tasks = [
   },
 ];
 const pushTask = (job, type) => tasks.push({ content: job, genre: type });
-tasks.forEach(function (task) {
-  console.log('[内容]' + task.content + '[ジャンル]' + task.genre);
-});
+const taskLists = () => {
+  console.log(title);
+  tasks.forEach(function (task) {
+    console.log(`[内容] ${task.content} [ジャンル] ${task.genre}`);
+  });
+}
+taskLists();
 let job = prompt('タスクを入力して下さい。');
 let type = prompt('ジャンルを入力して下さい。');
-while (job, type) {
-  pushTask(job, type);
-  alert('新しいタスクを入力しました。');
-  tasks.forEach((task) => console.log('[内容]' + task.content + '[ジャンル]' + task.genre));
-  job = prompt('タスクを入力して下さい');
-  type = prompt('ジャンルを入力しました。');
-} 
+pushTask(job, type);
+alert('新しいタスクを入力しました。');
+taskLists();
