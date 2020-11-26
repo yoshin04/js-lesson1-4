@@ -17,9 +17,7 @@ const tasks = [
 const pushTask = (job, type) => tasks.push({ content: job, genre: type });
 const taskLists = () => {
   console.log(title);
-  tasks.forEach(function (task) {
-    console.log(`[内容] ${task.content} [ジャンル] ${task.genre}`);
-  });
+  tasks.forEach((task) => console.log(`[内容] ${task.content} [ジャンル] ${task.genre}`));
 }
 taskLists();
 let job = prompt('タスクを入力して下さい。');
